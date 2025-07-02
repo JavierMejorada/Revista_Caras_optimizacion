@@ -1,0 +1,11 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de entorno (opcional)
+.env
+.env.local
+
+# Otros archivos generados (opcional)
+dist/
+build/
+*.log
