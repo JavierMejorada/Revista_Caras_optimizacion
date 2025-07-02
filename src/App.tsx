@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from './components/Header';
-import { SubscriptionForm } from './components/SubscriptionForm';
-import { FeaturedSection } from './components/FeaturedSection';
-import { Testimonials } from './components/Testimonials';
-import { Footer } from './components/Footer';
+import { Header } from './components/Header.tsx';
+import { SubscriptionForm } from './components/SubscriptionForm.tsx';
+import { FeaturedSection } from './components/FeaturedSection.tsx';
+import { Testimonials } from './components/Testimonials.tsx';
+import { Footer } from './components/Footer.tsx';
 
 const App = () => {
   return (
