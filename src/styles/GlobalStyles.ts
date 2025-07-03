@@ -4,24 +4,24 @@ const GlobalStyles = createGlobalStyle`
   /* Fuentes */
   @font-face {
     font-family: "Barlow Bold";
-    src: url("../fonts/Barlow-Bold.woff2") format("woff2"), 
-         url("../fonts/Barlow-Bold.woff") format("woff");
+    src: url("/Fonts/Barlow-Bold.woff2") format("woff2"), 
+         url("/Fonts/Barlow-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Barlow Light";
-    src: url("../fonts/Barlow-Light.woff2") format("woff2"), 
-         url("../fonts/Barlow-Light.woff") format("woff");
+    src: url("/Fonts/Barlow-Light.woff2") format("woff2"), 
+         url("/Fonts/Barlow-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
   }
 
   @font-face {
     font-family: "Playfair Display";
-    src: url("../fonts/Playfair-Display-Regular.woff2") format("woff2"), 
-         url("../fonts/Playfair-Display-Regular.woff") format("woff");
+    src: url("/Fonts/Playfair-Display-Regular.woff2") format("woff2"), 
+         url("/Fonts/Playfair-Display-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
   }

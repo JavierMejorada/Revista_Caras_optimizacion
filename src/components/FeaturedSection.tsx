@@ -14,6 +14,6 @@ export const FeaturedSection = () => (
       <li>Eventos y lanzamientos de lujo</li>
       <li>Contenido semanal curado por expertos</li>
     </ul>
-    <img src="/caras-beneficios.jpg" alt="Beneficios" style={{ width: '100%', marginTop: '1rem' }} />
+    <img src="/public/img/quite-the-noise-el-espectacular-anuncio-de-apple-para-promocionar-los-nuevos-airpods.jpg" alt="Beneficios" style={{ width: '100%', marginTop: '1rem' }} />
   </Section>
 );
