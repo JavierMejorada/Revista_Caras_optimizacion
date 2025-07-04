@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect'; // Importa los matchers adicionales
+import { render,waitFor} from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; 
 import { SubscriptionForm } from '../components/SubscriptionForms/SubscriptionForm';
 import { useForm } from '../Hooks/useForm';
+import { fireEvent } from '@testing-library/dom';
 
 // Mock completo del hook useForm
 jest.mock('../Hooks/useForm', () => ({
