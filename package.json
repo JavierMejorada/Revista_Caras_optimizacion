@@ -39,10 +39,8 @@
     "eject": "react-scripts eject"
   },
   "jest": {
-    "watchPlugins": [
-      "jest-watch-typeahead/filename",
-      "jest-watch-typeahead/testname"
-    ]
+    
+    
   },
   "browserslist": {
     "production": [
