@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useForm } from '../../Hooks/useForm.ts';
 
-// Estilos
+// Estilos (se mantienen igual)
 const FormContainer = styled.section`
   background-color: #f9f9f9;
   padding: 2rem;
@@ -89,12 +89,12 @@ export const SubscriptionForm = () => {
   } = useForm();
 
   return (
-    <FormContainer className="subscription-form">
-      <FormTitle>¡No te lo pierdas!</FormTitle>
+    <FormContainer aria-labelledby="form-title" role="region">
+      <FormTitle id="form-title">¡No te lo pierdas!</FormTitle> 
       
       <StyledForm onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="name">Nombre:</Label>
+          <Label htmlFor="name">Nombre completo:</Label>
           <Input
             type="text"
             id="name"
@@ -102,8 +102,15 @@ export const SubscriptionForm = () => {
             value={formData.name}
             onChange={handleChange}
             hasError={!!errors.name}
+            aria-required="true" 
+            aria-invalid={!!errors.name} 
+            aria-describedby={errors.name ? "name-error" : undefined} 
           />
-          {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+          {errors.name && (
+            <ErrorMessage id="name-error" role="alert"> 
+              {errors.name}
+            </ErrorMessage>
+          )}
         </FormGroup>
 
         <FormGroup>
@@ -115,20 +122,28 @@ export const SubscriptionForm = () => {
             value={formData.email}
             onChange={handleChange}
             hasError={!!errors.email}
+            aria-required="true"
+            aria-invalid={!!errors.email}
+            aria-describedby={errors.email ? "email-error" : undefined}
           />
-          {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+          {errors.email && (
+            <ErrorMessage id="email-error" role="alert">
+              {errors.email}
+            </ErrorMessage>
+          )}
         </FormGroup>
 
         <SubmitButton 
           type="submit" 
           disabled={isSubmitting}
           isSubmitting={isSubmitting}
+          aria-live="polite" 
         >
           {isSubmitting ? 'Enviando...' : 'Suscribirse'}
         </SubmitButton>
 
         {submitSuccess && (
-          <SuccessMessage>
+          <SuccessMessage role="status" aria-live="polite"> 
             ¡Gracias por suscribirte! Te hemos enviado un correo de confirmación.
           </SuccessMessage>
         )}

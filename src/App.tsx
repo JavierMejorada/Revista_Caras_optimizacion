@@ -11,11 +11,10 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
-      <SubscriptionForm />
-      <HighlightSection />
-      
-      <Testimonials />
+      <main role="main"> 
+        <SubscriptionForm />
+        <HighlightSection />
+        <Testimonials />
       </main>
       <Footer />
     </>
@@ -23,4 +22,3 @@ const App = () => {
 };
 
 export default App;
-a

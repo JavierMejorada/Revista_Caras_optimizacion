@@ -7,9 +7,9 @@ import {
 } from './styles.ts';
 
 export const Header = () => (
-  <HeaderContainer>
+  <HeaderContainer role="banner"> 
     <div className="container">
-      <Logo src="/img/Logo%202.png" alt="CARAS Logo" />
+      <Logo src="/img/Logo%202.png" alt="CARAS Logo - Revista de moda y estilo de vida" /> {/* Descripción más detallada */}
       <Title>Suscríbete a nuestro Newsletter</Title>
       <Subtitle>Recibe lo mejor de CARAS directamente en tu correo</Subtitle>
     </div>
