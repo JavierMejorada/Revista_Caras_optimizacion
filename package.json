@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "avif": "^0.5.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-lazy-load-image-component": "^1.6.3",
@@ -36,12 +37,11 @@
     "test": "react-scripts test",
     "test:watch": "react-scripts test --watch",
     "test:coverage": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "convert-images": "node scripts/convertImages.js",
+    "optimize-images": "node scripts/convertImages.js"
   },
-  "jest": {
-    
-    
-  },
+  "jest": {},
   "browserslist": {
     "production": [
       ">0.2%",
