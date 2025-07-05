@@ -1,13 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  /* Fuentes */
+  /* Optimización de fuentes con font-display */
   @font-face {
     font-family: "Barlow Bold";
     src: url("/Fonts/Barlow-Bold.woff2") format("woff2"), 
          url("/Fonts/Barlow-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -16,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
          url("/Fonts/Barlow-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -24,190 +26,69 @@ const GlobalStyles = createGlobalStyle`
          url("/Fonts/Playfair-Display-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
-  /* Estilos globales */
+  /* Critical CSS - Estilos mínimos para renderizado inicial */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "Barlow Light", sans-serif;
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
   }
 
-  /* Header */
-  header {
-    background-color: #ff0000;
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-
-    .logo {
-      max-width: 150px;
-    }
-
-    h1 {
-      margin: 10px 0;
-      font-size: 2em;
-      font-family: "Barlow Bold", sans-serif;
-      color: #fff;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #fff;
-    }
-  }
-
-  /* Main Content */
-  main {
-    padding: 20px 0;
-  }
-
-  /* Subscription Form */
-  .subscription-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-
-    h2 {
-      margin-bottom: 20px;
-      font-family: "Playfair Display", serif;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    label {
-      margin: 10px 0 5px;
-      font-weight: bold;
-    }
-
-    input {
-      width: 100%;
-      max-width: 400px;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1.1em;
-      font-family: "Barlow Bold", sans-serif;
-
-      &:hover {
-        background-color: #555;
-      }
-    }
-  }
-
-  /* Highlight Section */
-  .highlight {
-    padding: 20px;
-    text-align: center;
-  }
-
-  .highlight-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-
-      .benefit {
-        flex: 1 1 100%;
-      }
-    }
-  }
-
-  .benefit {
-    flex: 1 1 30%;
-    margin: 10px;
-    text-align: center;
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  }
-
-  /* Testimonials */
-  .testimonials {
-    background-color: #f9f9f9;
-    padding: 20px;
-
-    .testimonial {
-      margin-bottom: 20px;
-      text-align: center;
-
-      img {
-        border-radius: 0%;
-        width: 150px;
-        height: 150px;
-      }
-    }
-  }
-
-  /* Footer */
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-
-    p {
-      margin: 10px 0;
-    }
-
-    a {
-      display: inline-block;
-      margin: 0 10px;
-    }
-
-    img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-logo {
-      margin-top: 20px;
-      max-width: 100px;
-    }
-  }
-
-  /* Mensajes */
-  .error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-    margin-bottom: 10px;
+  /* Optimización de imágenes */
+  img {
+    max-width: 100%;
+    height: auto;
     display: block;
   }
 
-  .success-message {
-    color: green;
-    font-size: 1.2em;
-    margin-top: 15px;
-    text-align: center;
+  /* Mejoras de accesibilidad en focus */
+  a, button, input, textarea {
+    &:focus {
+      outline: 2px solid #ff0000;
+      outline-offset: 2px;
+    }
+  }
+
+  /* Layout básico */
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  /* Media queries para carga condicional */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Estilos para modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
   }
 `;
 
