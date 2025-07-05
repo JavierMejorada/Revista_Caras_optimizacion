@@ -4,7 +4,7 @@ import {
   Title,
   Subtitle 
 } from './styles.ts';
-import OptimizedImage from '../../../OptimizedImage.js';
+import OptimizedImage from '../OptimizedImage.js';
 
 export const Header = () => (
   <HeaderContainer role="banner"> 
