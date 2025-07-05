@@ -10,7 +10,7 @@ export const Header = () => (
   <HeaderContainer role="banner"> 
     <div className="container">
       <OptimizedImage 
-        src="/img/Logo%202.png" 
+        src="/public/img/Logo-Caras.png" 
         alt="CARAS Logo - Revista de moda y estilo de vida"
         width={300}
         height={82}
