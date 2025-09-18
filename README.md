@@ -36,7 +36,7 @@ La página incluye un **formulario de suscripción**, secciones destacadas, test
 
 ## 📬 Contacto
 Si deseas conocer más de mis proyectos o colaborar:  
-- 📧 **Correo:** tunombre@email.com  
+- 📧 **Correo:** jjavier0139@gmail.com
 - 💼 **LinkedIn:** [Mi perfil](https://www.linkedin.com/in/javier-mejorada-frontend/)  
 
 ---
